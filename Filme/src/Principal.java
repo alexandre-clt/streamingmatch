@@ -1,8 +1,10 @@
+import br.com.alura.screenmatch.calculadora.CalculadoraDetempo;
 import br.com.alura.screenmatch.modelos.Filme;
 import br.com.alura.screenmatch.modelos.Serie;
 
 public class Principal {
     public static void main(String[] args) {
+
         Filme meuFilme = new Filme();
         meuFilme.setNome("O poderoso chefão");
         meuFilme.setAnoDeLancamento(1970);
@@ -27,6 +29,18 @@ public class Principal {
         it.setEpisodiosPorTemporada(8);
         it.setMinutosPorEpisodio(59);
         System.out.println("Duração maratonar It: " + it.getDuracaoEmMinutos());
+
+        Filme outroFilme = new Filme();
+        outroFilme.setNome("Avatar");
+        outroFilme.setAnoDeLancamento(2023);
+        outroFilme.setDuracaoEmMinutos(190);
+
+        CalculadoraDetempo calculadora = new CalculadoraDetempo();
+        calculadora.inclui(meuFilme);
+        calculadora.inclui(outroFilme);
+        calculadora.inclui(it);
+        System.out.println(calculadora.getTempoTotal());
+
 
 
 
